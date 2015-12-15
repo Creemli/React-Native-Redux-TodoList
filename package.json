@@ -1,0 +1,16 @@
+{
+  "name": "FProject",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/react-native/packager/packager.sh",
+    "clean": "cd node_modules; find . -name .babelrc | grep -v packager | xargs rm"
+  },
+  "dependencies": {
+    "react": "0.14.3",
+    "react-native": "^0.16.0",
+    "react-redux": "3.1.2",
+    "redux": "3.0.5",
+    "redux-thunk": "1.0.0"
+  }
+}
