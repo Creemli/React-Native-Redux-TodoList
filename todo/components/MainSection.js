@@ -4,7 +4,7 @@
  */
 'use strict';
 
-import React, {Component, View, TouchableHighlight, TextInput, Text} from 'react-native';
+import React, {Component, View, TouchableHighlight, TouchableOpacity, TextInput, Text} from 'react-native';
 
 class List extends Component {
     constructor(props) {
@@ -16,12 +16,21 @@ class List extends Component {
         return (
             <View>
                 {todos.map(todo=>
-                    <View key={todo.id} todo={todo}>
-                        <Text>{todo.text}</Text>
+                    <View key={todo.id}>
+                        <TouchableOpacity onPress={()=>{this._onPress(todo.id)}}>
+                            <Text  style={{textDecorationLine: todo.completed ? 'line-through' : 'none'}}>
+                                {todo.text}
+                            </Text>
+                        </TouchableOpacity>
                     </View>
                 )}
-                <Text>Main</Text></View>
+                </View>
         );
+    }
+
+    _onPress(index) {
+        console.log(index);
+        this.props.completeTodo(index);
     }
 }
 

@@ -22,10 +22,12 @@ class TodoApp extends Component {
 
     render() {
         const { todos,  dispatch } = this.props;
+        const actions = bindActionCreators(todoActions, dispatch);
+        console.log(actions.addTodo);
         return (
             <View style={{flexDirection:'column'}}>
-                <Header {...bindActionCreators(todoActions, dispatch)}/>
-                <MainSection todos={todos}  {...bindActionCreators(todoActions, dispatch)} />
+                <Header addTodo={actions.addTodo}/>
+                <MainSection todos={todos} {...actions} />
             </View>
         );
     }
