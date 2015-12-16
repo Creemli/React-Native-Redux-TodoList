@@ -5,6 +5,7 @@
 'use strict';
 
 import * as types from '../actions/actionTypes';
+import {combineReducers} from 'redux';
 
 const origin = [
     {
@@ -14,7 +15,7 @@ const origin = [
     }
 ];
 
-export default function todos(state = origin, action) {
+function todos(state = origin, action) {
     switch (action.type) {
         case types.ADD_TODO:
             return [{
@@ -56,3 +57,5 @@ export default function todos(state = origin, action) {
 
     }
 }
+
+export default combineReducers({todos});

@@ -18,7 +18,7 @@ class List extends Component {
                 {todos.map(todo=>
                     <View key={todo.id}>
                         <TouchableOpacity onPress={()=>{this._onPress(todo.id)}}>
-                            <Text  style={{textDecorationLine: todo.completed ? 'line-through' : 'none'}}>
+                            <Text  style={{textDecorationLine: todo.completed ? 'line-through' : 'underline'}}>
                                 {todo.text}
                             </Text>
                         </TouchableOpacity>

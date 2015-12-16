@@ -34,13 +34,15 @@ class Header extends Component {
     }
 
     _onPress() {
-        console.log(this.text);
-        this.text && this.props.addTodo(this.text);
+        //this.text && this.props.addTodo(this.text);
+        this.state.text && this.props.addTodo(this.state.text);
         this.refs.test.clear();
+        this.setState({text:''});
     }
 
     _onChange(e) {
-        this.text = e.nativeEvent.text;
+        //this.text = e.nativeEvent.text;
+        this.setState({text: e.nativeEvent.text});
     }
 }
 
